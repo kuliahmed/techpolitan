@@ -126,7 +126,7 @@ public class HistoryFragment extends Fragment {
                         JSONObject object = attentionList.getJSONObject(i);
                         String timeSignIn = object.getString("jam_masuk");
                         String timeSignOut = object.getString("jam_pulang");
-                        String status = (!timeSignIn.equals("-") && !timeSignOut.equals("-")) ? "APPROVED" : "NOT APPROVED";
+                        String status = (!timeSignIn.equals("-") && !timeSignOut.equals("")) ? "APPROVED" : "-";
                         HistoryObject historyObject = new HistoryObject(status, timeSignIn, timeSignOut, object.getString("lokasi_masuk"), object.getString("lokasi_pulang"), object.getString("tipe_absen"), object.getJSONObject("user").getString("nama"), object.getJSONObject("user").getString("nik"), object.getString("tanggal"));
                         historyObjectList.add(historyObject);
                     }

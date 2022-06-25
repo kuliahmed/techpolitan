@@ -147,10 +147,8 @@ public class HomeFragment extends Fragment {
                                 tvLocationOut.setText(respobject.getJSONObject("absensi").getString("lokasi_pulang"));
                                 lblTimeIn.setText(respobject.getJSONObject("absensi").getString("jam_masuk"));
                                 lblTimeOut.setText(respobject.getJSONObject("absensi").getString("jam_pulang"));
-                                lblStatusIn.setText((respobject.getJSONObject("absensi").getString("foto_masuk").equals("")) ? "NOT APPROVED" : "APPROVED");
-                                lblStatusIn.setTextColor((respobject.getJSONObject("absensi").getString("foto_masuk").equals("")) ? getResources().getColor(R.color.red) : getResources().getColor(R.color.green));
-                                lblStatusOut.setText((respobject.getJSONObject("absensi").getString("foto_pulang").equals("")) ? "NOT APPROVED" : "APPROVED");
-                                lblStatusIn.setTextColor((respobject.getJSONObject("absensi").getString("foto_pulang").equals("")) ? getResources().getColor(R.color.red) : getResources().getColor(R.color.green));
+                                lblStatusIn.setText((respobject.getJSONObject("absensi").getString("foto_masuk").equals("")) ? "-" : "APPROVED");
+                                lblStatusOut.setText((respobject.getJSONObject("absensi").getString("foto_pulang").equals("")) ? "-" : "APPROVED");
 //                                profileImage.setImageBitmap(respobject.getJSONObject("absensi").getString("foto"));
 //                                ivSignIn.setImageBitmap(respobject.getJSONObject("useabsensir").getString("foto_masuk"));
 //                                imageView.setImageBitmap(respobject.getJSONObject("absensi").getString("foto_pulang"));
