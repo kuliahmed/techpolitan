@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:icon="@drawable/bottom_home_navigation"
+        android:title="@string/beranda"
+        app:itemTextAppearance="@style/FontRegular" />
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/bottom_history_navigation"
+        android:title="@string/riwayat"
+        app:itemTextAppearance="@style/FontRegular" />
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/bottom_camera_navigation"
+        android:title="@string/absen"
+        app:itemTextAppearance="@style/FontRegular" />
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/bottom_report_navigation"
+        android:title="@string/report"
+        app:itemTextAppearance="@style/FontRegular" />
+    <item
+        android:id="@+id/page_5"
+        android:enabled="true"
+        android:icon="@drawable/bottom_profile_navigation"
+        android:title="@string/profil"
+        app:itemTextAppearance="@style/FontRegular" />
+</menu>

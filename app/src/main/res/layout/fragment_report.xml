@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_marginTop="10dp"
+            style="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/lblDateStart"
+                        style="@style/FontMedium"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="Tahun"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/separator1"
+                        style="@style/FontMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="17dp"
+                        android:gravity="center"
+                        android:text=" : "
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toRightOf="@id/lblDateStart"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/tvDateStart"
+                        style="@style/FontRegular"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/edittext_outline"
+                        android:drawableRight="@drawable/ic_down_arrow"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"
+                        android:text="Pilih tahun"
+                        android:inputType="none"
+                        android:editable="false"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toRightOf="@id/separator1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblDateEnd"
+                        style="@style/FontMedium"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="Bulan"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateStart" />
+
+                    <TextView
+                        android:id="@+id/separator2"
+                        style="@style/FontMedium"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text=" : "
+                        app:layout_constraintLeft_toRightOf="@id/lblDateEnd"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateStart" />
+
+                    <EditText
+                        android:id="@+id/tvDateEnd"
+                        style="@style/FontRegular"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/edittext_outline"
+                        android:drawableRight="@drawable/ic_down_arrow"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"
+                        android:text="Pilih bulan"
+                        android:textSize="14sp"
+                        android:inputType="none"
+                        android:editable="false"
+                        app:layout_constraintLeft_toRightOf="@id/separator1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateStart" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvDownload"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="@color/green"
+                        app:cardCornerRadius="3dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateEnd">
+
+                        <TextView
+                            android:id="@+id/tvDownload"
+                            style="@style/FontMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="UNDUH"
+                            android:textColor="@color/white" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvSearch"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="@color/purple_500"
+                        app:cardCornerRadius="3dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/cvDownload"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateEnd">
+
+                        <TextView
+                            android:id="@+id/tvSearch"
+                            style="@style/FontMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:text="CARI"
+                            android:textColor="@color/white" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/lblTitle"
+                        style="@style/FontMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:text="Laporan Absensi"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@+id/tableview"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.evrencoskun.tableview.TableView
+                        android:id="@+id/tableview"
+                        style="@style/FontRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        app:allow_click_inside_cell="true"
+                        app:allow_click_inside_column_header="true"
+                        app:allow_click_inside_row_header="true"
+                        app:layout_constraintBottom_toTopOf="@id/tvPageMesage"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lblTitle" />
+
+                    <TextView
+                        android:id="@+id/tvPageMesage"
+                        style="@style/FontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Menampilkan 1 sampai 10 dari 10 data"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@id/tvPrev"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPrev"
+                        style="@style/FontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:text="Previous"
+                        android:textColor="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/tvPage" />
+
+                    <TextView
+                        android:id="@+id/tvPage"
+                        style="@style/FontSemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:text="|"
+                        android:textColor="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvNext"
+                        style="@style/FontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:text=""
+                        android:textColor="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/tvPage" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

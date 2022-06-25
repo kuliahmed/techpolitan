@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TechPolitan</string>
+    <string name="beranda">Beranda</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="absen">Absen</string>
+    <string name="report">Report</string>
+    <string name="profil">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username/ID</string>
+    <string name="password">Password</string>
+    <string name="remember_login">Ingat saya</string>
+    <string name="forgot">Lupa password ?</string>
+    <string name="login">Masuk</string>
+    <string name="techpolitan_web">techpolitan.co.id</string>
+    <string name="mobile_apps_v_1_0">Mobile apps v.1.0</string>
+    <string name="take_photo">TAKE PHOTO</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_message">You must grant permission to access camera and external storage to run this application.</string>
+    <string name="permission_warning">All permissions are required.</string>
+
+<!--    table-->
+
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="hiding_row_sample">Hiding 3. Row Sample</string>
+    <string name="showing_row_sample">Showing 3. Row Sample</string>
+    <string name="scroll_to_column_position">Scroll to 15. column position</string>
+    <string name="scroll_to_row_position">Scroll to 5. row position</string>
+    <string name="show_hide_the_column">Showing / Hiding 1. column</string>
+    <string name="table_pagination_details">Menampilkan %s sampai %s dari %s data</string>
+
+</resources>

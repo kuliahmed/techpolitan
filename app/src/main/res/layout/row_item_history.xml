@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHistory"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblStatus"
+            style="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="16sp"
+            android:text="Work From Home (WFH)"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDetailHistory"
+            style="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Detail"
+            android:textColor="@color/teal_700"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblDate"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Hari, Tanggal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblStatus" />
+
+        <TextView
+            android:id="@+id/lblSeperate1"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=" : "
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/lblDate"
+            app:layout_constraintTop_toBottomOf="@id/lblStatus" />
+
+        <TextView
+            android:id="@+id/lblDateValue"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Senin, 01 February 2022"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+            app:layout_constraintTop_toBottomOf="@id/lblStatus" />
+
+        <TextView
+            android:id="@+id/lblLocation"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Lokasi"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+        <TextView
+            android:id="@+id/lblSeperate2"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=" : "
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/lblDate"
+            app:layout_constraintTop_toBottomOf="@id/lblSeperate1" />
+
+        <TextView
+            android:id="@+id/lblLocationValue"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Home, Bambu Apus Pamulang"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+            app:layout_constraintTop_toBottomOf="@id/lblDateValue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

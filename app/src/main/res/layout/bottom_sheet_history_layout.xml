@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblTitle"
+                style="@style/FontMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Detail Riwayat Absensi"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/lblV1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="10dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/lblTitle" />
+
+            <TextView
+                android:id="@+id/lblName"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblV1" />
+
+            <TextView
+                android:id="@+id/lblSeperate1"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblV1" />
+
+            <TextView
+                android:id="@+id/lblNameValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Rizki Ahmad Darmawan"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblV1" />
+
+            <TextView
+                android:id="@+id/lblNip"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="NIP"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblName" />
+
+            <TextView
+                android:id="@+id/lblSeperate2"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblName" />
+
+            <TextView
+                android:id="@+id/lblNipValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="1134091902"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblName" />
+
+            <TextView
+                android:id="@+id/lblDate"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Hari, Tanggal"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblNip" />
+
+            <TextView
+                android:id="@+id/lblSeperate3"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblNip" />
+
+            <TextView
+                android:id="@+id/lblDateValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Senin, 01 February 2022"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblNip" />
+
+            <TextView
+                android:id="@+id/lblType"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Tipe Absen"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/lblSeperate4"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/lblTypeValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Work From Home (WFH)"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/lblTimeIn"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Jam Masuk"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <TextView
+                android:id="@+id/lblSeperate5"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <TextView
+                android:id="@+id/lblTimeInValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="08:00:12"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <TextView
+                android:id="@+id/lblTimeOut"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Jam Pulang"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeIn" />
+
+            <TextView
+                android:id="@+id/lblSeperate6"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeIn" />
+
+            <TextView
+                android:id="@+id/lblTimeOutValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="18:00:34"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeIn" />
+
+            <TextView
+                android:id="@+id/lblLocationIn"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Lokasi Masuk"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeOut" />
+
+            <TextView
+                android:id="@+id/lblSeperate7"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeOut" />
+
+            <TextView
+                android:id="@+id/lblLocationInValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Home, Bambu Apus Pamulang"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblTimeOut" />
+
+            <TextView
+                android:id="@+id/lblLocationOut"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Lokasi Pulang"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblLocationIn" />
+
+            <TextView
+                android:id="@+id/lblSeperate8"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text=" : "
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblLocationIn" />
+
+            <TextView
+                android:id="@+id/lblLocationOutValue"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Home, Bambu Apus Pamulang"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
+                app:layout_constraintTop_toBottomOf="@id/lblLocationIn" />
+
+            <View
+                android:id="@+id/lblV2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="10dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/lblLocationOut" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvClose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/purple_200"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblV2">
+
+                <TextView
+                    style="@style/FontSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="TUTUP"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

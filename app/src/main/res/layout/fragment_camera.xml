@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_marginTop="10dp"
+            style="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absensi"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintAbsen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <TextView
+                android:id="@+id/lblDate"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Hari Tanggal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/separator1"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text=" : "
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/FontRegular"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outline_blue_button"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="Senin 07 Feb 2022 - 08:27:54"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintLeft_toRightOf="@id/separator1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblType"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Tipe Absen"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/separator2"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text=" : "
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/tvWFH"
+                style="@style/FontRegular"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/outline_blue_button_selected"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="WFH"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toRightOf="@id/separator1"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/tvWFO"
+                style="@style/FontRegular"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/outline_blue_button"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="WFO"
+                android:textColor="@color/purple_500"
+                app:layout_constraintLeft_toRightOf="@id/tvWFH"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/tvVisit"
+                style="@style/FontRegular"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/outline_blue_button"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="VISIT"
+                android:textColor="@color/purple_500"
+                app:layout_constraintLeft_toRightOf="@id/tvWFO"
+                app:layout_constraintTop_toBottomOf="@id/lblDate" />
+
+            <TextView
+                android:id="@+id/lblLocation"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Lokasi"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <TextView
+                android:id="@+id/separator3"
+                style="@style/FontMedium"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text=" : "
+                app:layout_constraintLeft_toRightOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                style="@style/FontRegular"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outline_blue_button"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="Home, Bambu Apus Pamulang"
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintLeft_toRightOf="@id/separator1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblType" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLayoutCamera"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLocation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/cvSignIn">
+                        <org.opencv.android.JavaCameraView
+                            android:id="@+id/surfaceViewCamera"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+                        </org.opencv.android.JavaCameraView>
+                        <View
+                            android:id="@+id/scannerLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                        <View
+                            android:id="@+id/scannerBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="1.1dp"
+                            android:background="@color/white"
+                            app:layout_constraintVertical_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvSignIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="false"
+                        app:cardBackgroundColor="@color/material_gray_1"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/vCenter">
+
+                        <TextView
+                            android:id="@+id/tvSignIn"
+                            style="@style/FontMedium"
+                            android:layout_width="100dp"
+                            android:layout_height="37dp"
+                            android:gravity="center"
+                            android:text="SIGN IN"
+                            android:textColor="@color/white" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:id="@+id/vCenter"
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvSignOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="false"
+                        app:cardBackgroundColor="@color/material_gray_1"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/vCenter">
+
+                        <TextView
+                            android:id="@+id/tvSignOut"
+                            style="@style/FontMedium"
+                            android:layout_width="100dp"
+                            android:layout_height="37dp"
+                            android:gravity="center"
+                            android:text="SIGN OUT"
+                            android:textColor="@color/white" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintVertical_bias="0.468" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/warningText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Harap berikan izin akses kamera ke aplikasi untuk bisa absen"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintVertical_bias="0.474" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
