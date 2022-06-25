@@ -42,6 +42,8 @@ public class HomeFragment extends Fragment {
     private TextView tvLocationOut;
     private TextView lblTimeIn;
     private TextView lblTimeOut;
+    private TextView lblStatusOut;
+    private TextView lblStatusIn;
     private ImageView profileImage;
     private ImageView ivSignIn;
     private ImageView imageView;
@@ -103,6 +105,8 @@ public class HomeFragment extends Fragment {
         profileImage = view.findViewById(R.id.profile_image);
         ivSignIn = view.findViewById(R.id.ivSignIn);
         imageView = view.findViewById(R.id.imageView);
+        lblStatusOut = view.findViewById(R.id.lblStatusOut);
+        lblStatusIn = view.findViewById(R.id.lblStatusIn);
 
         skeleton = SkeletonLayoutUtils.createSkeleton(view.findViewById(R.id.clHomeStatus));
 
@@ -143,6 +147,10 @@ public class HomeFragment extends Fragment {
                                 tvLocationOut.setText(respobject.getJSONObject("absensi").getString("lokasi_pulang"));
                                 lblTimeIn.setText(respobject.getJSONObject("absensi").getString("jam_masuk"));
                                 lblTimeOut.setText(respobject.getJSONObject("absensi").getString("jam_pulang"));
+                                lblStatusIn.setText((respobject.getJSONObject("absensi").getString("foto_masuk").equals("-")) ? "NOT APPROVED" : "APPROVED");
+                                lblStatusIn.setTextColor((respobject.getJSONObject("absensi").getString("foto_masuk").equals("-")) ? getResources().getColor(R.color.red) : getResources().getColor(R.color.green));
+                                lblStatusOut.setText((respobject.getJSONObject("absensi").getString("foto_pulang").equals("-")) ? "NOT APPROVED" : "APPROVED");
+                                lblStatusIn.setTextColor((respobject.getJSONObject("absensi").getString("foto_pulang").equals("-")) ? getResources().getColor(R.color.red) : getResources().getColor(R.color.green));
 //                                profileImage.setImageBitmap(respobject.getJSONObject("absensi").getString("foto"));
 //                                ivSignIn.setImageBitmap(respobject.getJSONObject("useabsensir").getString("foto_masuk"));
 //                                imageView.setImageBitmap(respobject.getJSONObject("absensi").getString("foto_pulang"));
