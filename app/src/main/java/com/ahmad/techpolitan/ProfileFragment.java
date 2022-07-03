@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.faltenreich.skeletonlayout.Skeleton;
 import com.faltenreich.skeletonlayout.SkeletonLayoutUtils;
 
@@ -35,7 +38,7 @@ import org.json.JSONObject;
 public class ProfileFragment extends Fragment {
     SharedPreferences sharedpreferences;
     private TextView tvNip;
-    private TextView profile_image;
+    private ImageView profile_image;
     private TextView tvNameProfile;
     private TextView tvJabatan;
     private TextView tvNIK;
@@ -99,6 +102,7 @@ public class ProfileFragment extends Fragment {
 //        tvLoad = view.findViewById(R.id.tvLoad);
 //        tvLoad.setProgress(0);
         tvNameProfile = view.findViewById(R.id.tvNameProfile);
+        profile_image = view.findViewById(R.id.profile_image);
         tvNip = view.findViewById(R.id.tvNip);
         tvJabatan = view.findViewById(R.id.tvJabatan);
         tvNIK = view.findViewById(R.id.tvNIK);
@@ -163,6 +167,13 @@ public class ProfileFragment extends Fragment {
                                 tvPhone.setText(respobject.getString("telepon"));
                                 tvStatus.setText(respobject.getString("status"));
                                 tvJabatan.setText(respobject.getString("jabatan"));
+
+                                RequestOptions options = new RequestOptions()
+                                        .centerCrop()
+                                        .placeholder(R.drawable.ic_image_null)
+                                        .error(R.drawable.ic_image_null);
+
+                                Glide.with(getContext()).load(respobject.getString("foto")).apply(options).into(profile_image);
 
                                 skeleton.showOriginal();
 
