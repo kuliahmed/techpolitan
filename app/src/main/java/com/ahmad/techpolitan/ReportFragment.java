@@ -301,7 +301,11 @@ public class ReportFragment extends Fragment {
 
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
-                Toast.makeText(getContext(), "Report gagal di unduh", Toast.LENGTH_LONG).show();
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(() -> {
+                        Toast.makeText(getContext(), "Report gagal di unduh", Toast.LENGTH_LONG).show();
+                    });
+                }
             }
 
             return null;

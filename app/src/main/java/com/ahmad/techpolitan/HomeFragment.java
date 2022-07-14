@@ -149,9 +149,6 @@ public class HomeFragment extends Fragment {
                                 lblTimeOut.setText(respobject.getJSONObject("absensi").getString("jam_pulang"));
                                 lblStatusIn.setText((respobject.getJSONObject("absensi").getString("foto_masuk").equals("")) ? "-" : "APPROVED");
                                 lblStatusOut.setText((respobject.getJSONObject("absensi").getString("foto_pulang").equals("")) ? "-" : "APPROVED");
-//                                profileImage.setImageBitmap(respobject.getJSONObject("absensi").getString("foto"));
-//                                ivSignIn.setImageBitmap(respobject.getJSONObject("useabsensir").getString("foto_masuk"));
-//                                imageView.setImageBitmap(respobject.getJSONObject("absensi").getString("foto_pulang"));
 
                                 RequestOptions options = new RequestOptions()
                                         .centerCrop()
