@@ -598,13 +598,13 @@ public class CameraFragment extends Fragment implements CameraBridgeViewBase.CvC
                             croppedBitmap = Bitmap.createBitmap(croppedMat.width(), croppedMat.height(), Bitmap.Config.ARGB_8888);
                             Utils.matToBitmap(croppedMat, croppedBitmap);
                             Bitmap rotatedBitmap = Bitmap.createBitmap(croppedBitmap, 0, 0, croppedBitmap.getWidth(), croppedBitmap.getHeight(), matrix, true);
-                            croppedBitmap = resizeBitmap(rotatedBitmap);
+                            croppedBitmap = rotatedBitmap;
                             Message msg = new Message();
                             String textTochange = "IMAGE";
                             msg.obj = textTochange;
                             imageHandler.sendMessage(msg);
                             jenis = "Keluar";
-                            imageBase64 = bitmapToBase64(croppedBitmap);
+                            imageBase64 = bitmapToBase64(resizeBitmap(croppedBitmap));
 
                             if (mOpenCvCameraView != null) {
                                 mOpenCvCameraView.disableView();
@@ -642,7 +642,7 @@ public class CameraFragment extends Fragment implements CameraBridgeViewBase.CvC
     }
 
     private Bitmap resizeBitmap(Bitmap bitmap) {
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, 300, 300, false);
         return resizedBitmap;
     }
 
