@@ -1,5 +1,10 @@
 package com.ahmad.techpolitan;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -117,11 +122,18 @@ public class ProfileFragment extends Fragment {
         tvKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedpreferences = getContext().getSharedPreferences("Settings",Context.MODE_PRIVATE);
+                sharedpreferences = getContext().getSharedPreferences("Settings", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.clear().commit();
                 Intent intent = new Intent(getContext(), LoginActivity.class);
+                intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.addFlags(FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                if (getActivity() != null) {
+                    getActivity().finish();
+                }
             }
         });
 
@@ -137,25 +149,25 @@ public class ProfileFragment extends Fragment {
     }
 
     public void getDataProfile() throws JSONException {
-        sharedpreferences = getContext().getSharedPreferences("Settings",Context.MODE_PRIVATE);
-        String myID = sharedpreferences.getString(LoginActivity.MY_ID,"4");
+        sharedpreferences = getContext().getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        String myID = sharedpreferences.getString(LoginActivity.MY_ID, "4");
         JSONObject obj = new JSONObject();
         obj.put("id", myID);
 
         RequestQueue queue = Volley.newRequestQueue(this.getContext());
         String SPHERE_URL = "https://nachoscloth.xyz/api/profile";
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST,SPHERE_URL,obj,
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, SPHERE_URL, obj,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 //                        tvLoad.setVisibility(View.GONE);
-                        Log.e("Response Rest",SPHERE_URL+ response.toString() + myID);
+                        Log.e("Response Rest", SPHERE_URL + response.toString() + myID);
                         try {
 
-                            if(response.getBoolean("status")){
+                            if (response.getBoolean("status")) {
                                 JSONObject respobject = response.getJSONObject("data");
 
-                                Log.d("Response Object", "onResponse: "+respobject.toString());
+                                Log.d("Response Object", "onResponse: " + respobject.toString());
 
                                 tvNameProfile.setText(respobject.getString("nama"));
                                 tvNip.setText(respobject.getString("nip"));
@@ -195,7 +207,7 @@ public class ProfileFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 //                        tvLoad.setVisibility(View.GONE);
-                        Log.e("Response Error",SPHERE_URL+ " error " +error.toString());
+                        Log.e("Response Error", SPHERE_URL + " error " + error.toString());
 //                                hideProgressDialog();
                     }
                 });

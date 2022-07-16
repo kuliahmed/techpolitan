@@ -537,6 +537,7 @@ public class CameraFragment extends Fragment implements CameraBridgeViewBase.CvC
     public Mat featureJavaDetector(Mat mRgba2, final Mat Gray) {
         String myID = sharedpreferences.getString(LoginActivity.MY_ID, "4");
         isSignIn = sharedpreferences.getBoolean(myID + "SIGNIN", false);
+        boolean isFullAttend = sharedpreferences.getBoolean("ISFULLATTEND", false);
         if (mAbsoluteFaceSize == 0) {
             int height = Gray.rows();
             if (Math.round(height * mRelativeFaceSize) > 0) {
@@ -554,12 +555,12 @@ public class CameraFragment extends Fragment implements CameraBridgeViewBase.CvC
             Log.d("CameraFragment", "is Sign in " + isSignIn);
             if (getActivity() != null) {
                 getActivity().runOnUiThread(() -> {
-                    cvSignIn.setEnabled(!isSignIn);
-                    cvSignIn.setClickable(!isSignIn);
-                    cvSignOut.setEnabled(isSignIn);
-                    cvSignOut.setClickable(isSignIn);
-                    cvSignIn.setCardBackgroundColor(context.getResources().getColor((!isSignIn) ? R.color.green : R.color.material_gray_1));
-                    cvSignOut.setCardBackgroundColor(context.getResources().getColor((isSignIn) ? R.color.red : R.color.material_gray_1));
+                    cvSignIn.setEnabled(!isSignIn && !isFullAttend);
+                    cvSignIn.setClickable(!isSignIn && !isFullAttend);
+                    cvSignOut.setEnabled(isSignIn && !isFullAttend);
+                    cvSignOut.setClickable(isSignIn && !isFullAttend);
+                    cvSignIn.setCardBackgroundColor(context.getResources().getColor((!isSignIn && !isFullAttend) ? R.color.green : R.color.material_gray_1));
+                    cvSignOut.setCardBackgroundColor(context.getResources().getColor((isSignIn && !isFullAttend) ? R.color.red : R.color.material_gray_1));
 
                     cvSignIn.setOnClickListener(new View.OnClickListener() {
                         @Override

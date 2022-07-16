@@ -1,5 +1,10 @@
 package com.ahmad.techpolitan;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -145,7 +150,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void navigateToStartActivity(){
         Intent intent = new Intent(mContext, MainActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(FLAG_ACTIVITY_SINGLE_TOP);
+        intent.addFlags(FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
     }
 
 }

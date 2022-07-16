@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.131" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2578125" />
+        <entry key="app/src/main/res/layout/bottom_sheet_history_layout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/dialog_image_cropped.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.14175724637681159" />

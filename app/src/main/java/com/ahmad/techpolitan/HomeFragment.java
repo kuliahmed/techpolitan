@@ -121,6 +121,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void getDataHome() throws JSONException {
+        SharedPreferences.Editor editor = sharedpreferences.edit();
         sharedpreferences = getContext().getSharedPreferences("Settings", Context.MODE_PRIVATE);
         String myID = sharedpreferences.getString(LoginActivity.MY_ID, "4");
         JSONObject obj = new JSONObject();
@@ -149,6 +150,11 @@ public class HomeFragment extends Fragment {
                                 lblTimeOut.setText(respobject.getJSONObject("absensi").getString("jam_pulang"));
                                 lblStatusIn.setText((respobject.getJSONObject("absensi").getString("foto_masuk").equals("")) ? "-" : "APPROVED");
                                 lblStatusOut.setText((respobject.getJSONObject("absensi").getString("foto_pulang").equals("")) ? "-" : "APPROVED");
+
+                                boolean isFullAttendToday = !respobject.getJSONObject("absensi").getString("foto_masuk").equals("") && !respobject.getJSONObject("absensi").getString("foto_pulang").equals("");
+
+                                editor.putBoolean("ISFULLATTEND", isFullAttendToday);
+                                editor.apply();
 
                                 RequestOptions options = new RequestOptions()
                                         .centerCrop()
