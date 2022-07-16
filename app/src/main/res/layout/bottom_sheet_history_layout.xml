@@ -260,7 +260,7 @@
             <TextView
                 android:id="@+id/lblLocationInValue"
                 style="@style/FontRegular"
-                android:layout_width="270dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:maxLines="1"
@@ -294,11 +294,11 @@
             <TextView
                 android:id="@+id/lblLocationOutValue"
                 style="@style/FontRegular"
-                android:layout_width="270dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:maxLines="1"
-                android:text="Home, Bambdkjkdjkdjwkjdkwjdlwldlwjdwju Apus Pamulang"
+                android:text="Home, Bambu Apus Pamulang"
                 android:textColor="@color/black"
                 app:layout_constraintLeft_toRightOf="@id/lblSeperate1"
                 app:layout_constraintTop_toBottomOf="@id/lblLocationIn" />
