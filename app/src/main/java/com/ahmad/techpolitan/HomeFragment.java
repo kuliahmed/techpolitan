@@ -121,8 +121,8 @@ public class HomeFragment extends Fragment {
     }
 
     public void getDataHome() throws JSONException {
-        SharedPreferences.Editor editor = sharedpreferences.edit();
         sharedpreferences = getContext().getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
         String myID = sharedpreferences.getString(LoginActivity.MY_ID, "4");
         JSONObject obj = new JSONObject();
         obj.put("id", myID);
